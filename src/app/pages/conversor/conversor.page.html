@@ -1,0 +1,52 @@
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
+
+
+
+<ion-content fullscreen>
+  <ion-card>
+    <ion-card-header>
+      <ion-img src="../../../assets/img/conversor.png"></ion-img>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Conversor de Moneda</ion-card-title>
+      <ion-card-subtitle>Escoje la moneda y la cantidad para realizar la conversion</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="moneda">
+          <ion-select id="moneda-uno" placeholder="Select Coin">
+            <ion-select-option value="CLP">CLP</ion-select-option>
+          </ion-select>
+          <ion-input 
+          type="number" 
+          id="cantidad-uno" 
+          placeholder="0"
+          value="1"></ion-input>
+        </ion-item>
+
+        <div class="taza-cambio-container">
+          <button class="btn" id="taza">
+          Cambio
+          </button>
+
+          <div class="cambio" id="cambio"></div>
+        </div>
+
+        <ion-item class="moneda">
+          <ion-select id="moneda-dos" placeholder="Select Coin">
+            <ion-select-option value="USD" selected>USD</ion-select-option>
+            <ion-select-option value="EUR">EUR</ion-select-option>
+          </ion-select>
+          <ion-input
+          type="number"
+          id="cantidad-dos"
+          placeholder="0"
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

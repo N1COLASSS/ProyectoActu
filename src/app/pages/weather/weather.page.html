@@ -1,0 +1,49 @@
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
+
+<ion-content fullscreen>
+
+  <ion-card>
+    <ion-card-header>
+      <img width="350" height="220" src="../../../assets/img/eltiempo.png" class="mx-auto">
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <form (submit)="submitLocation(cityName, countryCode)">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="City Name" #cityName>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Country Code" #countryCode>
+        </div>
+        <button class="btn btn-primary btn-block mt-2">Get Weather</button>
+      </form>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <div *ngIf="weather" class="card card-body">
+        <ion-item>
+          <ion-label>
+            <h3>Temperature Max: {{weather.main.temp_max}} °C</h3>
+
+            <h3>Temperature Min: {{weather.main.temp_min}} °C</h3>
+
+            <h3>Latitude: {{weather.coord.lat}}</h3>
+
+            <h3>Longitude: {{weather.coord.lon}}</h3>
+
+            <h3>Humidity: {{weather.main.humidity}}</h3>
+
+            <h3>Pressure: {{weather.main.pressure}}</h3>
+
+            <h3>Description: {{weather.weather[0].description}}</h3>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>
